@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button and Form Example</title>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+        const button = document.createElement('button');
+        button.textContent = 'Go to Form';
+        button.id = 'redirectButton';
+
+        document.getElementById('container').appendChild(button);
+
+        button.addEventListener('click', function() {
+            const formHTML = `
+                <form >
+        <h2>Registration Form</h2>
+        <label for="hobby">Hobby:</label>
+        <input type="checkbox" id="cricket" name="hobby" value="cricket"> Cricket
+        <input type="checkbox" id="football" name="hobby" value="football"> Football
+        <input type="checkbox" id="gaming" name="hobby" value="gaming"> Gaming
+        <br><br>
+
+        <label for="gender">Gender:</label>
+        <input type="radio" id="male" name="gender" value="male"> Male
+        <input type="radio" id="female" name="gender" value="female"> Female
+        <br><br>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"><br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob"><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+            `;
+
+            document.getElementById('container').innerHTML = formHTML;
+        });
+    </script>
+</body>
+</html>
